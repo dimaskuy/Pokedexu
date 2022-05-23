@@ -2,7 +2,7 @@
 Search and find your favorite Pokémon every region in the pokedex on the Pokedexu!
 
 <h1>Welcome to Poxedexu!</h1>
-Here you can:
+On Pokedexu, you can:
 <ul>
 <li> Explore the pokedex in each of the Pokémon regions. National, Kanto, Johto, Hoenn, and many more! </li>
 <li> Find your beloved Pokémon in the search field. </li>
