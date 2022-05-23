@@ -18,7 +18,6 @@ Made with love with the help of these tools:
 <li> Vanilla JavaScript. </li>
 <li> Tailwind CSS Framework. </li>
 <li> JavaScript Regular Expressions. </li>
-<li> And an API from ([PokeAPI](https://pokeapi.co/). </li>
+<li> And an API from [PokeAPI](https://pokeapi.co/). </li>
  </ul>
- 
- [PokeAPI](https://pokeapi.co/)
+
