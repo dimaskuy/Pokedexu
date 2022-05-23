@@ -20,3 +20,5 @@ Made with love with the help of these tools:
 <li> JavaScript Regular Expressions. </li>
 <li> And an API from ([PokeAPI](https://pokeapi.co/). </li>
  </ul>
+ 
+ [PokeAPI](https://pokeapi.co/)
