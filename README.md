@@ -1,5 +1,5 @@
 # Pokedexu
-🧑‍💻 View Demo: [Pokedexu!](pokedexu.netlify.app) <br>
+🧑‍💻 View Demo: [Pokedexu!](https://pokedexu.netlify.app/) <br>
 
 Search and find your favorite Pokémon every region in the pokedex on the Pokedexu!
 
@@ -22,6 +22,6 @@ Made with love with the help of these tools:
 - JavaScript Regular Expressions. <br>
 - And an API from [PokeAPI](https://pokeapi.co/).
 
-➡️ [Pokedexu!](pokedexu.netlify.app)
+➡️ [Pokedexu!](https://pokedexu.netlify.app/)
 
 
