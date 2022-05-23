@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "pixel";
+  src: url("../font/pixel.ttf");
+}
+@font-face {
+  font-family: "connection";
+  src: url("../font/connection.otf");
+}
+
+@layer components {
+  #poke-info-layer {
+    background: rgba(100, 116, 139, 0.6);
+  }
+
+  .intro {
+    background-image: linear-gradient(to top, rgba(241, 245, 249, 1), rgba(248, 250, 252, 0)), url("/img/pokemon-header.jpg");
+  }
+
+  .pokeRegion p {
+    text-shadow: 0px 1px 0px #1e293b;
+  }
+  .pokeRegion:hover p {
+    text-shadow: 0px 1.5spx 0px #1e293b;
+  }
+
+  .pokeRegion:nth-child(1) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/national.png");
+  }
+  .pokeRegion:nth-child(2) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/kanto.png");
+  }
+  .pokeRegion:nth-child(3) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/johto.png");
+  }
+  .pokeRegion:nth-child(4) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/hoenn.png");
+  }
+  .pokeRegion:nth-child(5) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/sinnoh.png");
+  }
+  .pokeRegion:nth-child(6) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/unova.jpg");
+  }
+  .pokeRegion:nth-child(7) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/conquest.png");
+  }
+  .pokeRegion:nth-child(8) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/kalos-central.png");
+  }
+  .pokeRegion:nth-child(9) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/kalos-coastal.png");
+  }
+  .pokeRegion:nth-child(10) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/kalos-mountain.png");
+  }
+  .pokeRegion:nth-child(11) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/alola.png");
+  }
+  .pokeRegion:nth-child(12) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/melemele.png");
+  }
+  .pokeRegion:nth-child(13) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/akala.png");
+  }
+  .pokeRegion:nth-child(14) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/ulaula.png");
+  }
+  .pokeRegion:nth-child(15) {
+    background-image: linear-gradient(to top, rgba(30, 41, 59, 0.4), rgba(30, 41, 59, 0.4)), url("/img/region/poni.png");
+  }
+
+  #to-top:active,
+  .pokeBox:active {
+    transform: scale(0.9);
+  }
+  .pokeBox:hover {
+    box-shadow: 0 10px 15px -3px #e0e7ff, 0 4px 6px -4px #e0e7ff;
+  }
+
+  .pokeBox:hover .pokeImg img,
+  .pokeRegion:hover {
+    transform: scale(1.05);
+  }
+
+  #poke-info .detail-data li:first-child {
+    @apply pt-0;
+  }
+  #poke-info .detail-data li:last-child {
+    @apply pb-0 border-b-0;
+  }
+
+  #poke-info .detail-data li {
+    @apply pt-2 pb-2 border-b-2 border-slate-300;
+  }
+
+  .image-preview-loading {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .image-preview {
+    background: rgba(255, 255, 255, 0.3);
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+  }
+  .image-preview:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+  .image-preview img {
+    transform: translateZ(20px);
+  }
+
+  @media (min-width: 768px) {
+    .pokeBox:hover .pokeImg img,
+    .pokeRegion:hover {
+      transform: scale(1.1);
+    }
+  }
+}

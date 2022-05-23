@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/css/output.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <title>Pokedexu! A Pokémon Library</title>
+  </head>
+  <body class="bg-indigo-50 font-poppins selection:bg-indigo-500 selection:text-white">
+
+    <main class="z-[9999] cursor-pointer fixed bottom-0 right-0 flex justify-center items-center bg-indigo-100 hover:bg-indigo-200 transition-all duration-300 hover:-translate-y-2 p-3 m-3 rounded-xl group" id="to-top" style="transform: scale(0);">
+      <button type="button">
+        <span class="flex justify-center items-center font-bold opacity-80 group-hover:opacity-100"><img src="bootstrap-icons/icons/arrow-up-circle.svg" alt="Arrow Up" class="w-6 md:w-5"></span>
+      </button>
+    </main>
+
+    <!-- Popup Pokemon Info -->
+    <main class="info-layer w-full h-full fixed top-0 z-[99999] flex justify-center items-center py-2 backdrop-blur-sm transition-opacity duration-300" style="opacity: 0; transform: scale(0);" id="poke-info-layer">
+
+      <button type="button" class="close-popup-btn md:hidden lg:block z-[99999] absolute top-0 lg:right-0 m-4 right-1 lg:m-5 hover:bg-indigo-50 lg:bg-indigo-50 lg:active:bg-indigo-100 opacity-60 hover:opacity-100 p-1 lg:p-2 lg:active:scale-95 rounded-full">
+        <span><img src="bootstrap-icons/icons/x-lg.svg" alt="Close" class="close-icon md:w-7 lg:w-5 w-5"></span>
+      </button>
+
+      <div class="lg:w-10/12 md:w-[90%] w-[95%] md:h-auto lg:h-full h-full bg-white bg-opacity-80 backdrop-blur-md rounded-xl overflow-auto transition-transform duration-300"style="opacity: 0; transform: scale(0) translateY(100vh);" id="poke-info">
+        <div class="container px-4 py-8 md:px-8 md:py-16 lg:py-6 text-slate-800">
+
+          <button type="button" class="close-popup-btn hidden md:block lg:hidden z-[99999] absolute top-0 md:right-0 m-4 right-1 lg:m-5 hover:bg-indigo-50 lg:bg-indigo-50 lg:active:bg-indigo-100 opacity-60 hover:opacity-100 p-1 lg:p-2 lg:active:scale-95 rounded-full">
+            <span><img src="bootstrap-icons/icons/x-lg.svg" alt="Close" class="close-icon md:w-7 lg:w-5 w-5"></span>
+          </button>
+          <div class="main-content" id="info-main">
+            <div class="title-loading flex justify-start items-center flex-row md:flex-row group">
+              <span class="mx-3 mr-4 md:mr-6 md:w-10 md:h-10 w-8 h-8 p-2 items-center rounded-full bg-indigo-300 opacity-90 animate-pulse"></span>
+                <div class="lg:w-1/2 w-3/4 lg:h-10 h-8 bg-slate-400 animate-pulse rounded-xl"></div>
+            </div>
+
+            <div class="mx-auto detail-container-loading flex md:justify-between lg:justify-around align-center flex-col lg:flex-row">
+              <div class="detail-loading lg:w-1/2 w-4/5 mt-10 ml-4 md:flex lg:block justify-between items-center order-2 lg:order-1">
+                <ul class="detail-data-loading md:w-1/2 mr-20 lg:w-[unset]">
+                  <div class="lg:w-1/3 w-3/5 h-6 bg-slate-400 mb-4 rounded animate-pulse"></div>
+
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                </ul>
+
+                <div class="base-stats-loading lg:mt-8 md:w-1/2 lg:w-[unset]">
+                  <ul class="detail-data-loading">
+                  <div class="lg:w-1/3 w-3/5 h-6 bg-slate-400 mb-4 rounded animate-pulse"></div>
+
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                  <li class="inline-block lg:w-1/6 w-1/3 h-6 bg-slate-300 rounded mr-2 mb-2 animate-pulse"></li><div class="inline-block lg:w-1/2 w-3/5 h-6 bg-slate-300 rounded mb-2 animate-pulse"></div> <br>
+                </ul>
+                </div>
+              </div>
+
+              <div class="images-sprites-loading lg:w-2/5 w-full order-1 lg:order-2 mt-10 lg:mt-8">
+                <figure class="image-preview-loading w-full md:h-56 h-48 flex justify-center items-center rounded-xl transition-all animate-pulse"></figure>
+                <div class="toggle-images-loading flex justify-center items-center md:flex-row lg:flex-col flex-col md:gap-x-4 lg:gap-y-2 gap-y-2 mt-6">
+                  <div class="md:w-1/2 lg:w-full w-full md:h-10 h-8 rounded-xl bg-indigo-400 opacity-80 animate-pulse"></div>
+                  <div class="md:w-1/2 lg:w-full w-full md:h-10 h-8 rounded-xl bg-indigo-400 opacity-80 animate-pulse"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- <main class="container max-w-5xl my-8 sm:my-12 mx-auto sm:p-0 px-4"> -->
+    <section class="intro bg-no-repeat bg-cover bg-center w-full py-4 px-4 md:py-8 md:px-8 mb-4 rounded-b-3xl lg:flex justify-between">
+      <div class="intro-title">
+        <h2 class="sm:text-lg text-sm font-connection
+         uppercase tracking-wider text-indigo-600 opacity-60 sm:leading-3 leading-snug">Welcome to,</h2>
+        <a href="#" class="sm:text-6xl text-3xl italic font-pixel font-bold uppercase sm:tracking-wider tracking-wide text-indigo-600 leading-relaxed sm:leading-snug hover:border-b-2 hover:border-dashed hover:border-indigo-600 active:border-dashed active:border-2 active:border-indigo-600" onclick="document.location.reload()">Pokedexu!</a>
+        <!-- <p class="sm:text-base text-sm text-slate-600 font-bold opacity-70 leading-relaxed">A Library for Pokémon!</p> -->
+      </div>
+      <div class="intro-credit mt-1 lg:mt-0">
+        <p class="text-xs font-bold text-slate-500">Created by, <a href="https://www.instagram.com/_dimaskuy/" class="hover:text-indigo-600 border-b-2 border-dashed border-slate-500 hover:border-indigo-600 active:border-2 active:font-connection" target="_blank">DimasRS</a>.</p>
+      </div>
+    </section>
+    <!-- <hr class="my-4" /> -->
+
+    <main class="container max-w-5xl my-8 md:my-12 mx-auto sm:p-0 px-4">
+      <section class="inputPokemonSection md:mt-2 mt-4" style="display: none;">
+        <label for="searchPokemon" class="inline-block sm:text-lg text-base font-bold italic text-slate-600 sm:text-slate-800 py-2 sm:px-2">Search Pokémon..</label>
+        <form action="" class="inputPokemonForm flex">
+            <input
+              type="text"
+              id="searchPokemon"
+              class="bg-white lg:text-lg text-sm py-1 px-2 sm:px-4 w-full h-full sm:h-11 lg:w-1/2 lg:focus:w-full rounded-full font-bold text-slate-800 focus:text-slate-900 tracking-wide outline-none border-2 border-indigo-500 focus:border-indigo-600 focus:ring-2 md:focus:ring-2 focus:ring-indigo-500 transition-all duration-300 relative"></input>
+            <button type="submits" class="relative right-10 inline-block top-0  hover:opacity-60" id="searchButton"><img src="bootstrap-icons/icons/search.svg" alt="Search button" class="w-5" /></button>
+        </form>
+      </section>
+
+      <p class="instruct-text block text-base md:text-2xl text-center text-indigo-600 font-bold">Choose your region:</p>
+      <section class="pokeContainer sm:mt-14 mt-10 flex justify-center items-start flex-wrap gap-5 md:gap-8">
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="1">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">National</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="2">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Kanto</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="7">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Johto</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="15">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Hoenn</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="6">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Sinnoh</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="9">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Unova</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="11">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Conquest Gallery</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="12">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Kalos Central</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="13">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Kalos Coastal</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="14">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Kalos Mountain</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="21">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Alola</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="17">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Melemele</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="18">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Akala</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="19">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Ulaula</p>
+        </div>
+        <div class="pokeRegion cursor-pointer bg-[url('/img/region/national.png')] bg-no-repeat bg-center bg-cover md:w-64 md:h-36 w-full h-24 flex justify-center items-center rounded-2xl transition-all duration-300 shadow-sm hover:shadow-lg group" data-type="region" data-regionid="20">
+          <p class="text-lg md:text-xl text-white font-bold tracking-wide">Poni</p>
+        </div>
+        
+        <!-- <div class="pokeBox md:w-52 md:h-52 w-full h-full px-2 pb-8 lg:px-4 lg:pt-2 lg:pb-8 bg-white rounded-3xl flex justify-center items-center flex-col text-center cursor-pointer relative transition-all shadow-xl group" data-pokeurl="${pokeUrl}" data-pokeid="${pokeID}">
+            <span class="pokeBox-text absolute right-0 top-0 mx-3 my-1 w-7 h-7 flex justify-center items-center rounded-full bg-indigo-50 text-sm sm:text-base text-slate-700 group-hover:text-slate-800 opacity-90 group-hover:opacity-100">1</span>
+          <div class="pokeImg group-hover:animate-jump2">
+            <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" alt="${pokeName}" class="pokeImg-img w-28 md:w-32 group-hover:scale-105 md:group-hover:scale-110 transition-all" />
+          </div>
+          <div class="info">
+            <h2 class="info-text text-lg md:text-xl font-bold leading-relaxed  group-hover:text-indigo-600 tracking-wide">Bulbasaur</h2>
+          </div>
+        </div> -->
+
+        <!-- <div class="pokeBox-loading md:w-52 md:h-52 w-full h-full px-2 pb-8 lg:px-4 lg:pt-2 lg:pb-8 bg-white rounded-3xl flex justify-center items-center flex-col text-center cursor-pointer group relative animate-pulse">
+          <span class="absolute right-0 top-0 mx-3 my-1 w-7 h-7 rounded-full bg-indigo-50 text-sm sm:text-base text-slate-700 group-hover:text-slate-800 opacity-90 group-hover:opacity-100 animate-pulse"></span>
+          <div class="pokeImg-loading w-full h-28 bg-slate-200 mb-4 mt-8 animate-pulse"></div>
+          <div class="info-loading w-full h-6 bg-slate-200 animate-pulse"></div>
+          <div class="mt-4 w-28 h-5 bg-slate-100 animate-pulse"></div>
+        </div>
+        <div class="pokeBox-loading md:w-52 md:h-52 w-full h-full px-2 pb-8 lg:px-4 lg:pt-2 lg:pb-8 bg-white rounded-3xl flex justify-center items-center flex-col text-center cursor-pointer group relative animate-pulse">
+          <span class="absolute right-0 top-0 mx-3 my-1 w-7 h-7 rounded-full bg-indigo-50 text-sm sm:text-base text-slate-700 group-hover:text-slate-800 opacity-90 group-hover:opacity-100 animate-pulse"></span>
+          <div class="pokeImg-loading w-full h-28 bg-slate-200 mb-4 mt-8 animate-pulse"></div>
+          <div class="info-loading w-full h-6 bg-slate-200 animate-pulse"></div>
+          <div class="mt-4 w-28 h-5 bg-slate-100 animate-pulse"></div>
+        </div>
+        <div class="pokeBox-loading md:w-52 md:h-52 w-full h-full px-2 pb-8 lg:px-4 lg:pt-2 lg:pb-8 bg-white rounded-3xl flex justify-center items-center flex-col text-center cursor-pointer group relative animate-pulse">
+          <span class="absolute right-0 top-0 mx-3 my-1 w-7 h-7 rounded-full bg-indigo-50 text-sm sm:text-base text-slate-700 group-hover:text-slate-800 opacity-90 group-hover:opacity-100 animate-pulse"></span>
+          <div class="pokeImg-loading w-full h-28 bg-slate-200 mb-4 mt-8 animate-pulse"></div>
+          <div class="info-loading w-full h-6 bg-slate-200 animate-pulse"></div>
+          <div class="mt-4 w-28 h-5 bg-slate-100 animate-pulse"></div>
+        </div> -->
+      </section>
+    </main>
+  </body>
+
+  <!-- <script src="script.js"></script> -->
+  <script src="tilt-js/vanilla-tilt.min.js"></script>
+  <script src="script.js"></script>
+</html>
