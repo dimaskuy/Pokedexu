@@ -156,6 +156,7 @@ regionBox.forEach((region) => {
   region.addEventListener("click", function (e) {
     document.querySelector(".inputPokemonSection").style.display = "block";
     document.querySelector(".instruct-text").style.display = "none";
+    document.querySelector(".disqus-sec").style.display = "none";
 
     // console.log("Fetching Region ID: ", this.dataset.regionid);
 
@@ -332,7 +333,7 @@ function showInfoPopup(e) {
       pokeInfoMain.innerHTML = displayElementPopup(pokeID, pokeName, pokeType.join(", "), pokeAbility.join(", "), pokeExp, pokeWeight, pokeHeight, pokeHP, pokeAttack, pokeDefense, pokeSpeed, pokeSpecAttack, pokeSpecDefense);
     })
     .catch((error) => {
-      console.log(error);
+      console.error(error);
     });
 }
 

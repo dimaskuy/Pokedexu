@@ -179,10 +179,33 @@
           <div class="mt-4 w-28 h-5 bg-slate-100 animate-pulse"></div>
         </div> -->
       </section>
+
+      <section class="disqus-sec container max-w-5xl md:mt-28 mt-20 mb-8 mx-auto sm:p-0 px-4">
+        <p class="block text-base md:text-2xl text-left mb-8 text-indigo-600 font-bold">Comments Section</p>
+        <div id="disqus_thread"></div>
+      </section>
     </main>
   </body>
 
   <!-- <script src="script.js"></script> -->
+  <script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-pokedexu-netlify-com.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
   <script src="tilt-js/vanilla-tilt.min.js"></script>
   <script src="script.js"></script>
 </html>
