@@ -13,11 +13,11 @@ For now, here are the features that I can do. In the future maybe I will improve
 
 <h1>Some of the Tools I Use...</h1>
 Made with love with the help of these tools:
-<ul>
+
 <li> HTML, CSS. </li>
 <li> Vanilla JavaScript. </li>
 <li> Tailwind CSS Framework. </li>
 <li> JavaScript Regular Expressions. </li>
 <li> And an API from [PokeAPI](https://pokeapi.co/). </li>
- </ul>
+
 
